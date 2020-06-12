@@ -16,6 +16,7 @@ class DOMRender {
     }
   
     renderElement(container = null, element = null) {
+      element = typeof element == 'string' ? this.createHTML(element) : element;
       document.querySelector(container || this.rootTag).append(element || this.element);
     }
 
